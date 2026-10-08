@@ -1,0 +1,73 @@
+students = [
+    {"name": "Ananya Sharma", "usn": "4AL22AI001", "semester": 3, "cgpa": 8.9,
+     "subjects": {"Python": 85, "DBMS": 78, "Math": 92, "DSA": 88, "OS": 70},
+     "attendance": 88, "club": "AI Club", "city": "Mangaluru"},
+   
+    {"name": "Raj Patel", "usn": "4AL22AI002", "semester": 3, "cgpa": 7.2,
+     "subjects": {"Python": 62, "DBMS": 55, "Math": 70, "DSA": 68, "OS": 58},
+     "attendance": 72, "club": "Robotics", "city": "Bangalore"},
+   
+    {"name": "Kavya Nair", "usn": "4AL22AI003", "semester": 3, "cgpa": 9.4,
+     "subjects": {"Python": 95, "DBMS": 90, "Math": 98, "DSA": 92, "OS": 88},
+     "attendance": 95, "club": "AI Club", "city": "Mangaluru"},
+   
+    {"name": "Arjun Reddy", "usn": "4AL22AI004", "semester": 3, "cgpa": 6.5,
+     "subjects": {"Python": 50, "DBMS": 45, "Math": 60, "DSA": 55, "OS": 42},
+     "attendance": 65, "club": None, "city": "Hyderabad"},
+   
+    {"name": "Priya Menon", "usn": "4AL22AI005", "semester": 3, "cgpa": 8.1,
+     "subjects": {"Python": 76, "DBMS": 82, "Math": 80, "DSA": 74, "OS": 78},
+     "attendance": 82, "club": "Coding Club", "city": "Kochi"},
+   
+    {"name": "Deepak Kumar", "usn": "4AL22AI006", "semester": 3, "cgpa": 5.8,
+     "subjects": {"Python": 40, "DBMS": 38, "Math": 55, "DSA": 42, "OS": 35},
+     "attendance": 55, "club": None, "city": "Mangaluru"},
+   
+    {"name": "Sneha Bhat", "usn": "4AL22AI007", "semester": 3, "cgpa": 8.5,
+     "subjects": {"Python": 88, "DBMS": 85, "Math": 82, "DSA": 80, "OS": 84},
+     "attendance": 90, "club": "AI Club", "city": "Udupi"},
+   
+    {"name": "Mohammed Irfan", "usn": "4AL22AI008", "semester": 3, "cgpa": 7.8,
+     "subjects": {"Python": 72, "DBMS": 68, "Math": 75, "DSA": 82, "OS": 65},
+     "attendance": 78, "club": "Robotics", "city": "Mangaluru"},
+   
+    {"name": "Lakshmi Rao", "usn": "4AL22AI009", "semester": 3, "cgpa": 9.1,
+     "subjects": {"Python": 91, "DBMS": 88, "Math": 94, "DSA": 90, "OS": 86},
+     "attendance": 92, "club": "Coding Club", "city": "Bangalore"},
+   
+    {"name": "Vikram Singh", "usn": "4AL22AI010", "semester": 3, "cgpa": 6.9,
+     "subjects": {"Python": 58, "DBMS": 52, "Math": 65, "DSA": 60, "OS": 48},
+     "attendance": 68, "club": "Robotics", "city": "Delhi"},
+]
+
+
+
+# 1. Students who are detained
+detained = [s["name"] for s in students if s["attendance"] < 75]
+
+print("Detained Students:")
+print(detained)
+
+
+# 2. Status of every student
+status = {
+    s["name"]: "DETAINED" if s["attendance"] < 75
+    else "WARNING" if s["attendance"] <= 85
+    else "GOOD STANDING"
+    for s in students
+}
+
+print("\nStudent Status:")
+print(status)
+
+
+# 3. Number of detained students in each city
+detained_by_city = {}
+
+for s in students:
+    if s["attendance"] < 75:
+        city = s["city"]
+        detained_by_city[city] = detained_by_city.get(city, 0) + 1
+
+print("\nDetained Students by City:")
+print(detained_by_city)
