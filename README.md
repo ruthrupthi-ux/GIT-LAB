@@ -67,3 +67,7 @@ Remember these three important things for your exam:
 - origin = GitHub remote name.
 - master = Base branch.
 - feature/login-page = Compare branch.
+
+- git remote -v
+- git branch -r
+- git log --oneline --all --graph
