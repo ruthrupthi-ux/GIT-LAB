@@ -1,0 +1,16 @@
+add application configuration ==light
+after first one 
+fix/dark-mode ===creating branch
+feat: add dark mode configuration ==dark
+double click on master
+go change dark to solarized 
+chore: update default theme to solarized ==for solarized 
+right click on dark-mode ===merge/fix option is there
+go to notepad change everything only theme=solarized should be there
+last commit will be there automatically you need to click commit
+
+
+git branch
+cat config.json
+git status
+git log --oneline --graph --all
